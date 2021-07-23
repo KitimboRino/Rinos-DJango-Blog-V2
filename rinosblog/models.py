@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from datetime import datetime, date
 
 # Create your models here.
 class Post(models.Model):
@@ -11,6 +12,7 @@ class Post(models.Model):
     # Deletes all the admins blog posts in cace the user is deleted
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
+    post_date = models.DateField(auto_now_add=True)
 
     # Allows us to see the title of the blog post and author on admin page
     def __str__(self):

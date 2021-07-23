@@ -14,6 +14,8 @@ from django.urls import reverse_lazy
 class HomeView(ListView):
     model = Post
     template_name = 'home.html'
+    ordering = ['-post_date']
+    # ordering = ['-id']
 
 # DetailView makes a query set and brings back the details of one record
 class ArticleDetailView(DetailView):
