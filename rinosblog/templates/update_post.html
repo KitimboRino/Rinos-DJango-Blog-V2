@@ -3,19 +3,25 @@
 {% block title %} Edit Blog Post {% endblock %}
 
 {% block content %}
-    
-<h1>Update Post...</h1>
-<br/>
-<br/>
 
-<div class='form-group'>
-    <form method='POST'>
-        <!-- Cross Site Request Tocken prevents hackers from stealing info from the forms-->
-        {% csrf_token %}
-        <!-- Django form system -->
-        {{ form.as_p }}
-        <button class='btn btn-secondary'>Update</button>
-    </form>
-</div>
+{% if user.is_authenticated %}
+
+    <h1>Update Post...</h1>
+    <br/>
+    <br/>
+
+    <div class='form-group'>
+        <form method='POST'>
+            <!-- Cross Site Request Tocken prevents hackers from stealing info from the forms-->
+            {% csrf_token %}
+            <!-- Django form system -->
+            {{ form.as_p }}
+            <button class='btn btn-secondary'>Update</button>
+        </form>
+    </div>
+
+{% else %}
+    Restricted Section
+{% endif %}
 
 {% endblock %}
