@@ -7,10 +7,10 @@ class PostForm(forms.ModelForm):
         fields = ('title','title_tag', 'author', 'body')
     
         widgets = {
-            'title': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Title of Article'}),
-            'title_tag': forms.TextInput(attrs = {'class': 'form-control'}),
-            'author': forms.Select(attrs = {'class': 'form-control'}),
-            'body': forms.Textarea(attrs = {'class': 'form-control'}),
+            'title': forms.TextInput(attrs = {'class': 'form-control-sm', 'placeholder': 'Title of Article'}),
+            'title_tag': forms.TextInput(attrs = {'class': 'form-control-sm'}),
+            'author': forms.Select(attrs = {'class': 'form-control-sm'}),
+            'body': forms.Textarea(attrs = {'class': 'form-control-sm'}),
         }
 
 class EditForm(forms.ModelForm):
@@ -19,7 +19,7 @@ class EditForm(forms.ModelForm):
         fields = ('title', 'title_tag', 'body')
     
         widgets = {
-            'title': forms.TextInput(attrs = {'class': 'form-control', 'placeholder': 'Title of Article'}),
-            'title_tag': forms.TextInput(attrs = {'class': 'form-control'}),
-            'body': forms.Textarea(attrs = {'class': 'form-control'}),
+            'title': forms.TextInput(attrs = {'class': 'form-control-sm', 'placeholder': 'Title of Article'}),
+            'title_tag': forms.TextInput(attrs = {'class': 'form-control-sm'}),
+            'body': forms.Textarea(attrs = {'class': 'form-control-sm'}),
         }
