@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Create A New Blog Post {% endblock %}
+
+{% block content %}
+    
+<h1>Add Post...</h1>
+<br/>
+<br/>
+
+<div class='form-group'>
+    <form method='POST'>
+        <!-- Cross Site Request Tocken prevents hackers from stealing info from the forms-->
+        {% csrf_token %}
+        <!-- Django form system -->
+        {{ form.as_p }}
+        <button class='btn btn-secondary'>Post</button>
+    </form>
+</div>
+
+{% endblock %}
+
