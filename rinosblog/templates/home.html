@@ -14,7 +14,7 @@
         {{post.author.last_name}} |
         {{post.post_date}} 
         <br/>
-        {{post.body|slice:':150'}}
+        {{post.body|slice:':150'|safe}}
         <br/>
             
             {% if user.is_authenticated %}
